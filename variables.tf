@@ -83,19 +83,19 @@ variable "tls_secret_id" {
 
 variable "user_supplied_kms_crypto_key_self_link" {
   type        = string
-  description = "Self link to user created kms crypto key"
+  description = "(Optional) Self link to user created kms crypto key"
   default     = null
 }
 
 variable "user_supplied_kms_key_ring_self_link" {
   type        = string
-  description = "Self link to user created kms key ring"
+  description = "(Optional) Self link to user created kms key ring"
   default     = null
 }
 
 variable "user_supplied_userdata_path" {
   type        = string
-  description = "File path to custom userdata script being supplied by the user"
+  description = "(Optional) File path to custom userdata script being supplied by the user"
   default     = null
 }
 
