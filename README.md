@@ -25,7 +25,7 @@ on GCP using the Enterprise version of Vault 1.8+.
     - GCP SSL Certificates
     - [Secret Manager API](https://cloud.google.com/secret-manager/docs/reference/rest)
 
-- To deploy without an existing VPC, use the [example VPC](examples/gcp-vpc)
+- To deploy without an existing VPC, use the [example VPC](https://github.com/hashicorp/terraform-gcp-vault-ent-starter/tree/main/examples/gcp-vpc)
   code to build out the pre-requisite environment. Ensure you are selecting a
   region that has at least three [
   zones](https://cloud.google.com/compute/docs/regions-zones).
@@ -36,7 +36,7 @@ on GCP using the Enterprise version of Vault 1.8+.
   - Subnet: a single subnet in which to deploy the Vault cluster
   - One Cloud Router and [Cloud NAT](https://cloud.google.com/nat/docs/overview)
 
-- Use the [example](examples/gcp-tls) code to create TLS certs
+- Use the [example](https://github.com/hashicorp/terraform-gcp-vault-ent-starter/tree/main/examples/gcp-tls) code to create TLS certs
   and store them in [GCP Secret Manager](https://cloud.google.com/secret-manager/docs/overview)
   along with importing them into a [GCP self managed SSL Certificate](https://cloud.google.com/load-balancing/docs/ssl-certificates)
 
@@ -46,12 +46,12 @@ on GCP using the Enterprise version of Vault 1.8+.
 ```hcl
 provider "google" {
   project = "my-project-id"
-  region = "us-west1"
+  region  = "us-west1"
 }
 
 provider "google-beta" {
   project = "my-project-id"
-  region = "us-west1"
+  region  = "us-west1"
 }
 
 module "vault-ent" {
@@ -59,21 +59,21 @@ module "vault-ent" {
   version              = "0.1.0"
 
   # The shared DNS SAN of the TLS certs being used
-  leader_tls_servername        = "vault.server.com"
+  leader_tls_servername  = "vault.server.com"
   #Your GCP project ID
-  project_id                   = "my-project-id"
+  project_id             = "my-project-id"
   # Your GCP region
-  region                       = "us-west1"
+  region                 = "us-west1"
   # Prefix for uniquely identifying GCP resources
-  resource_name_prefix         = "test"
+  resource_name_prefix   = "test"
   # Self link of the subnetwork you wish to deploy into
-  subnetwork                   = "https://www.googleapis.com/compute/v1/projects/my-project-id/regions/us-west1/subnetworks/subnet-01"
+  subnetwork             = "https://www.googleapis.com/compute/v1/projects/my-project-id/regions/us-west1/subnetworks/subnet-01"
   # Name of the SSL Certificate to be used for Vault LB
-  ssl_certificate_name         = "vault-xxxxxxxxxxxxxxxx"
+  ssl_certificate_name   = "vault-xxxxxxxxxxxxxxxx"
   # Secret id/name given to the google secret manager secret
-  tls_secret_id                = "terraform_example_module_vault_tls_secret"
+  tls_secret_id          = "terraform_example_module_vault_tls_secret"
   # Path to Vault Enterprise license file
-  vault_license_filepath       = "/Users/user/Downloads/vault.hclic"
+  vault_license_filepath = "/Users/user/Downloads/vault.hclic"
 }
 ```
 
@@ -139,4 +139,4 @@ Success! Vault is initialized
 ## License
 
 This code is released under the Mozilla Public License 2.0. Please see
-[LICENSE](LICENSE) for more details.
+[LICENSE](https://github.com/hashicorp/terraform-gcp-vault-ent-starter/blob/main/LICENSE) for more details.
