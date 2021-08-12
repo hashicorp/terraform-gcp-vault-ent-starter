@@ -131,7 +131,7 @@ variable "vm_machine_type" {
 
 variable "vm_disk_size" {
   type        = number
-  default     = 100
+  default     = 500
   description = "VM Disk size"
 }
 
