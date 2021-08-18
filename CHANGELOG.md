@@ -1,4 +1,4 @@
-## 0.1.1 (August 13, 2021)
+## 0.1.1 (August 20, 2021)
 
 * Update config and file permissions to match Deployment Guide
 * Update disk specs to new Reference Architecture recommendations
