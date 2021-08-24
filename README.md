@@ -57,6 +57,7 @@ provider "google-beta" {
 module "vault-ent" {
   source               = "hashicorp/vault-ent-starter/gcp"
   version              = "0.1.2"
+  version              = "0.1.1"
 
   # The shared DNS SAN of the TLS certs being used
   leader_tls_servername  = "vault.server.com"
