@@ -56,6 +56,7 @@ provider "google-beta" {
 
 module "vault-ent" {
   source               = "hashicorp/vault-ent-starter/gcp"
+  version              = "0.1.2"
   version              = "0.1.1"
 
   # The shared DNS SAN of the TLS certs being used
@@ -93,8 +94,7 @@ module "vault-ent" {
   - To initialize the Vault cluster, run the following commands:
 
 ```
-$ sudo -i
-# vault operator init
+$ vault operator init
 ```
 
   - This should return back the following output which includes the recovery
@@ -113,8 +113,8 @@ Success! Vault is initialized
     command:
 
 ```
-# export VAULT_TOKEN="<your Vault token>"
-# vault operator raft list-peers
+$ export VAULT_TOKEN="<your Vault token>"
+$ vault operator raft list-peers
 ```
 
 - Please note that Vault does not enable [dead server
@@ -124,7 +124,7 @@ Success! Vault is initialized
   server cleanup, run the following command:
 
  ```
-# vault operator raft autopilot set-config \
+$ vault operator raft autopilot set-config \
     -cleanup-dead-servers=true \
     -dead-server-last-contact-threshold=10 \
     -min-quorum=3
@@ -133,7 +133,7 @@ Success! Vault is initialized
 - You can verify these settings after you apply them by running the following command:
 
 ```
-# vault operator raft autopilot get-config
+$ vault operator raft autopilot get-config
 ```
 
 ## License
