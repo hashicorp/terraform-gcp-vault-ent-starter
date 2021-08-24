@@ -118,7 +118,7 @@ variable "vault_license_filepath" {
 
 variable "vault_version" {
   type        = string
-  default     = "1.8.0"
+  default     = "1.8.1"
   description = "Vault version"
 }
 
@@ -131,7 +131,7 @@ variable "vm_machine_type" {
 
 variable "vm_disk_size" {
   type        = number
-  default     = 100
+  default     = 500
   description = "VM Disk size"
 }
 

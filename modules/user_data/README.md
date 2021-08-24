@@ -29,7 +29,7 @@ module "user_data" {
   tls_secret_id                     = "terraform_example_module_vault_tls_secret"
   user_supplied_userdata_path       = "/Users/user/Downloads/install_vault.sh.tpl"
   vault_license_name                = "vault.hclic"
-  vault_version                     = "1.8.0"
+  vault_version                     = "1.8.1"
 }
 ```
 
