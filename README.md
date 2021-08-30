@@ -62,8 +62,6 @@ module "vault-ent" {
   leader_tls_servername  = "vault.server.com"
   #Your GCP project ID
   project_id             = "my-project-id"
-  # Your GCP region
-  region                 = "us-west1"
   # Prefix for uniquely identifying GCP resources
   resource_name_prefix   = "test"
   # Self link of the subnetwork you wish to deploy into

@@ -44,11 +44,6 @@ variable "project_id" {
   description = "GCP project in which to launch resources"
 }
 
-variable "region" {
-  type        = string
-  description = "GCP region in which to launch resources"
-}
-
 variable "reserve_subnet_range" {
   type        = string
   default     = "10.1.0.0/16"
