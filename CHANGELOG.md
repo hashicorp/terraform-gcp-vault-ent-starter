@@ -6,6 +6,7 @@
 * Update TLS directory permissions
 * Remove client cert and key from profile script
 * Update indentation in configuration file
+* Remove region as required variable
 
 ## 0.1.0 (July 28, 2021)
 
