@@ -56,15 +56,12 @@ provider "google-beta" {
 
 module "vault-ent" {
   source               = "hashicorp/vault-ent-starter/gcp"
-  version              = "0.1.2"
   version              = "0.1.1"
 
   # The shared DNS SAN of the TLS certs being used
   leader_tls_servername  = "vault.server.com"
   #Your GCP project ID
   project_id             = "my-project-id"
-  # Your GCP region
-  region                 = "us-west1"
   # Prefix for uniquely identifying GCP resources
   resource_name_prefix   = "test"
   # Self link of the subnetwork you wish to deploy into
