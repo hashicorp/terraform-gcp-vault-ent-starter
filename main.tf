@@ -5,6 +5,7 @@ module "iam" {
   key_ring_id              = module.kms.key_ring_id
   resource_name_prefix     = var.resource_name_prefix
   tls_secret_id            = var.tls_secret_id
+  gcp_project              = var.project_id
 }
 
 module "kms" {
@@ -45,6 +46,7 @@ module "object_storage" {
   resource_name_prefix   = var.resource_name_prefix
   vault_license_filepath = var.vault_license_filepath
   vault_license_name     = var.vault_license_name
+  vault_storage_location = var.storage_location
 }
 
 module "user_data" {

@@ -17,3 +17,9 @@ variable "tls_secret_id" {
   type        = string
   description = "Secret id/name given to the google secrets manager secret"
 }
+
+variable "gcp_project" {
+  type = string
+  description = "GCP project"
+}
+

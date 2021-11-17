@@ -141,3 +141,10 @@ variable "vm_disk_type" {
   default     = "pd-ssd"
   description = "VM Disk type. SSD recommended"
 }
+
+variable "storage_location" {
+  type        = string
+  default     = "us"
+  description = "for bucket where license is stored"
+}
+
