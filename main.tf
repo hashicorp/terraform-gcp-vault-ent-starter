@@ -30,9 +30,7 @@ module "load_balancer" {
 module "networking" {
   source = "./modules/networking"
 
-  networking_firewall_ports  = var.networking_firewall_ports
   networking_healthcheck_ips = var.networking_healthcheck_ips
-  networking_ip_allow_list   = var.networking_ip_allow_list
   reserve_subnet_range       = var.reserve_subnet_range
   resource_name_prefix       = var.resource_name_prefix
   service_account            = module.iam.email

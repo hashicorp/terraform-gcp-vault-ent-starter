@@ -15,22 +15,10 @@ variable "location" {
   description = "Location of the kms key ring"
 }
 
-variable "networking_firewall_ports" {
-  type        = list(string)
-  default     = []
-  description = "Additional ports to open in the firewall"
-}
-
 variable "networking_healthcheck_ips" {
   type        = list(string)
   default     = ["35.191.0.0/16", "130.211.0.0/22"]
   description = "Allowed IPs required for healthcheck. Provided by GCP"
-}
-
-variable "networking_ip_allow_list" {
-  type        = list(string)
-  default     = ["0.0.0.0/0"]
-  description = "List of allowed IPs for the firewall"
 }
 
 variable "node_count" {
