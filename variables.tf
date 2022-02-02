@@ -66,6 +66,12 @@ variable "ssl_certificate_name" {
   description = "Name of the created managed SSL certificate. Required when create_load_balancer is true"
 }
 
+variable "storage_location" {
+  type        = string
+  default     = "US"
+  description = "The location of the storage bucket for the Vault license."
+}
+
 variable "subnetwork" {
   type        = string
   description = "The self link of the subnetwork in which to deploy resources"

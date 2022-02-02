@@ -8,6 +8,11 @@ variable "key_ring_id" {
   description = "Self link of the KMS key ring"
 }
 
+variable "project_id" {
+  type        = string
+  description = "GCP project in which to launch resources"
+}
+
 variable "resource_name_prefix" {
   type        = string
   description = "Prefix for naming resources"

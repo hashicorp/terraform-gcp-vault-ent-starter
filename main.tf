@@ -3,6 +3,7 @@ module "iam" {
 
   gcs_bucket_vault_license = module.object_storage.gcs_bucket_vault_license
   key_ring_id              = module.kms.key_ring_id
+  project_id               = var.project_id
   resource_name_prefix     = var.resource_name_prefix
   tls_secret_id            = var.tls_secret_id
 }
@@ -43,6 +44,7 @@ module "object_storage" {
   source = "./modules/object_storage"
 
   resource_name_prefix   = var.resource_name_prefix
+  storage_location       = var.storage_location
   vault_license_filepath = var.vault_license_filepath
   vault_license_name     = var.vault_license_name
 }

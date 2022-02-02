@@ -39,8 +39,9 @@ resource "google_kms_key_ring_iam_binding" "vault_iam_kms_binding" {
 }
 
 resource "google_project_iam_member" "vault_auto_join" {
-  member = "serviceAccount:${google_service_account.main.email}"
-  role   = google_project_iam_custom_role.autojoin_role.name
+  member     = "serviceAccount:${google_service_account.main.email}"
+  project    = var.project_id
+  role       = google_project_iam_custom_role.autojoin_role.name
 }
 
 resource "google_secret_manager_secret_iam_member" "secret_manager_member" {
