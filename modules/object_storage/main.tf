@@ -3,6 +3,7 @@ resource "random_pet" "gcs" {
 }
 
 resource "google_storage_bucket" "vault_license_bucket" {
+  location                    = var.storage_location
   name                        = "${var.resource_name_prefix}-vault-license-${random_pet.gcs.id}"
   uniform_bucket_level_access = true
 }

@@ -1,3 +1,8 @@
+## 0.1.2 (February 2, 2022)
+
+* Update required variables for "google_project_iam_member" and "google_storage_bucket" resources
+* Remove unused networking variables 
+
 ## 0.1.1 (August 30, 2021)
 
 * Update config and file permissions to match Deployment Guide

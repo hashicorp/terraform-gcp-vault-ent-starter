@@ -1,16 +1,6 @@
-variable "networking_firewall_ports" {
-  type        = list(string)
-  description = "Additional ports to open in the firewall"
-}
-
 variable "networking_healthcheck_ips" {
   type        = list(string)
   description = "Allowed IPs required for healthcheck. Provided by GCP"
-}
-
-variable "networking_ip_allow_list" {
-  type        = list(string)
-  description = "List of allowed IPs for the firewall"
 }
 
 variable "reserve_subnet_range" {

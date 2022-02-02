@@ -3,6 +3,7 @@ module "iam" {
 
   gcs_bucket_vault_license = module.object_storage.gcs_bucket_vault_license
   key_ring_id              = module.kms.key_ring_id
+  project_id               = var.project_id
   resource_name_prefix     = var.resource_name_prefix
   tls_secret_id            = var.tls_secret_id
 }
@@ -29,9 +30,7 @@ module "load_balancer" {
 module "networking" {
   source = "./modules/networking"
 
-  networking_firewall_ports  = var.networking_firewall_ports
   networking_healthcheck_ips = var.networking_healthcheck_ips
-  networking_ip_allow_list   = var.networking_ip_allow_list
   reserve_subnet_range       = var.reserve_subnet_range
   resource_name_prefix       = var.resource_name_prefix
   service_account            = module.iam.email
@@ -43,6 +42,7 @@ module "object_storage" {
   source = "./modules/object_storage"
 
   resource_name_prefix   = var.resource_name_prefix
+  storage_location       = var.storage_location
   vault_license_filepath = var.vault_license_filepath
   vault_license_name     = var.vault_license_name
 }
