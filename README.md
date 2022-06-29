@@ -25,20 +25,17 @@ on GCP using the Enterprise version of Vault 1.8+.
     - GCP SSL Certificates
     - [Secret Manager API](https://cloud.google.com/secret-manager/docs/reference/rest)
 
-- To deploy without an existing VPC, use the [example VPC](https://github.com/hashicorp/terraform-gcp-vault-ent-starter/tree/main/examples/gcp-vpc)
-  code to build out the pre-requisite environment. Ensure you are selecting a
-  region that has at least three [
-  zones](https://cloud.google.com/compute/docs/regions-zones).
+- This module assumes you have an existing VPC along with a GCP secrets manager
+  that contains TLS certs for the Vault nodes and load balancer. If you do not,
+  you may use the following
+  [quickstart](https://github.com/hashicorp/terraform-gcp-vault-ent-starter/tree/main/examples/prereqs_quickstart)
+  to deploy these resources.
 
 - To deploy into an existing VPC, ensure the following components exist and are
   routed to each other correctly:
   - Google Compute Network: manages a VPC network
   - Subnet: a single subnet in which to deploy the Vault cluster
   - One Cloud Router and [Cloud NAT](https://cloud.google.com/nat/docs/overview)
-
-- Use the [example](https://github.com/hashicorp/terraform-gcp-vault-ent-starter/tree/main/examples/gcp-tls) code to create TLS certs
-  and store them in [GCP Secret Manager](https://cloud.google.com/secret-manager/docs/overview)
-  along with importing them into a [GCP self managed SSL Certificate](https://cloud.google.com/load-balancing/docs/ssl-certificates)
 
 - Create a Terraform configuration that pulls in the Vault module and specifies
   values for the required variables:
@@ -56,7 +53,7 @@ provider "google-beta" {
 
 module "vault-ent" {
   source               = "hashicorp/vault-ent-starter/gcp"
-  version              = "0.1.1"
+  version              = "0.2.0"
 
   # The shared DNS SAN of the TLS certs being used
   leader_tls_servername  = "vault.server.com"
