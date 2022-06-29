@@ -1,8 +1,3 @@
-provider "google" {
-  project = var.project_id
-  region  = var.region
-}
-
 module "test_vpc_module" {
   source       = "terraform-google-modules/network/google"
   version      = "~> 3.2.0"

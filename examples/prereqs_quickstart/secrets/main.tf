@@ -1,8 +1,3 @@
-provider "google" {
-  project = var.project_id
-  region  = var.region
-}
-
 # Generate a private key so you can create a CA cert with it.
 resource "tls_private_key" "ca" {
   algorithm = "RSA"

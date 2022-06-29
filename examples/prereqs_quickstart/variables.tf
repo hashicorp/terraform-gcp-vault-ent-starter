@@ -1,12 +1,12 @@
 variable "network_name" {
   type        = string
+  default     = "consul-test-network"
   description = "The name of the VPC network being created"
-  default     = "vault-test-network"
 }
 
 variable "project_id" {
   type        = string
-  description = "The project ID to host the network in"
+  description = "The GCP project ID in which to launch resources"
 }
 
 variable "region" {

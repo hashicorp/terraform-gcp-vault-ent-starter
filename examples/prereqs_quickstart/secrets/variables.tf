@@ -1,8 +1,3 @@
-variable "project_id" {
-  type        = string
-  description = "The project ID in which to build resources"
-}
-
 variable "region" {
   type        = string
   description = "GCP region in which to launch resources"
